@@ -1,9 +1,5 @@
 const axios = require('axios')
 
-const HARVEST_CREDS = {
-    TOKEN: '870202.pt.BnltfZlVKzZNfHWTlLnVpEZfadd1fZHRwl82odL6-OAoCHri3uGHgNt6ioKVIWlAkPi1cJGUnsGVLN9Su9an-g',
-    ACCOUNT_ID: '563649'
-}
 const harvestOptions = {
     protocol: "https:",
     hostname: "api.harvestapp.com",
@@ -15,8 +11,8 @@ const harvestOptions = {
     },
     headers: {
         "User-Agent": "Harcast API POC",
-        "Authorization": "Bearer " + HARVEST_CREDS.TOKEN,
-        "Harvest-Account-ID": HARVEST_CREDS.ACCOUNT_ID
+        "Authorization": "Bearer " + process.env.HARVEST_TOKEN,
+        "Harvest-Account-ID": process.env.HARVEST_ACCOUNT_ID
     }
 }
 
