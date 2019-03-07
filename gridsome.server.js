@@ -15,7 +15,7 @@ const harvestOptions = {
         "Harvest-Account-ID": process.env.HARVEST_ACCOUNT_ID
     }
 }
-
+console.log(process.env)
 const harvestBaseURL = `${harvestOptions.protocol}//${harvestOptions.hostname}/${harvestOptions.version}/`
 
 module.exports = function (api) {
