@@ -1,42 +1,22 @@
 <template>
   <div class="layout">
-    <header class="header">
-      <strong>
-        <g-link :to="{ name: 'home' }">Gridsome</g-link>
-      </strong>
-      <nav class="nav">
-        <g-link class="nav__link" :to="{ name: 'home' }">Home</g-link>
-        <g-link class="nav__link" :to="{ name: 'about' }">About</g-link>
-      </nav>
-    </header>
-    <slot/>
+    <nav class="navbar is-success" role="navigation" aria-label="main navigation">
+      <div class="container is-fluid">
+        <div class="navbar-brand">
+          <g-link :to="{ name: 'home' }" class="navbar-item">Harcast</g-link>
+        </div>
+        <div class="navbar-menu">
+          <div class="navbar-start">
+            <g-link class="navbar-item" :to="{ name: 'home' }">Home</g-link>
+            <g-link class="navbar-item" :to="{ name: 'about' }">About</g-link>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="container is-fluid">
+      <section class="section">
+        <slot/>
+      </section>
+    </div>
   </div>
 </template>
-
-<style>
-body {
-  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  margin:0;
-  padding:0;
-  line-height: 1.5;
-}
-
-.layout {
-  max-width: 600px;
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  height: 80px;
-}
-
-.nav__link {
-  margin-left: 20px;
-}
-</style>

@@ -1,0 +1,18 @@
+// Import a Google Font
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans');
+
+$bodyFont: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+$headerFont: 'Montserrat', Verdana, 'Verdana Ref', sans-serif;
+
+body {
+    font-family: $bodyFont;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: $headerFont;
+}
+.navbar-brand {
+    font-family: $headerFont;
+    font-weight: 600;
+    font-size: 1.25rem;
+}
