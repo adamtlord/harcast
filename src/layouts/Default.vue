@@ -13,10 +13,6 @@
         </div>
       </div>
     </nav>
-    <div class="container is-fluid">
-      <section class="section">
-        <slot/>
-      </section>
-    </div>
+    <slot/>
   </div>
 </template>
