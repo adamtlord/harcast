@@ -8,9 +8,7 @@
     "now-build": "yarn build"
   },
   "dependencies": {
-    "gridsome": "^0.3.0"
-  },
-  "devDependencies": {
+    "gridsome": "^0.3.0",
     "bulma": "^0.7.4",
     "node-sass": "^4.11.0",
     "sass-loader": "^7.1.0"
