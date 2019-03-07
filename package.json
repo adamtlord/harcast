@@ -9,8 +9,11 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "gridsome": "^0.3.0",
+    "gridsome": "^0.5.4",
     "node-sass": "^4.11.0",
     "sass-loader": "^7.1.0"
+  },
+  "resolutions": {
+    "gridsome/jest-worker": "24.0.0"
   }
 }
