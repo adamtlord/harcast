@@ -791,9 +791,9 @@
     svg-tags "^1.0.0"
 
 "@vue/babel-preset-app@^3.4.0":
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/@vue/babel-preset-app/-/babel-preset-app-3.4.1.tgz#98a0bf3f207b989e00a9ec27dd0d2d1b4f27402b"
-  integrity sha512-io04dFwNgAtjT/5c9l69rDjH0HYOamlgafDRaRz69NEvo59dkOELYlB6G1so7S7Nj25El+0iZTTJ9zPN0qLgeA==
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/@vue/babel-preset-app/-/babel-preset-app-3.5.0.tgz#7d1584baba0d633b72cb950308bb35a6b07389d4"
+  integrity sha512-0zSE+5GcQ6pje39T5k4j7rw7rERGfFXvjHrcqcOS1WhO3UKDzA4dsivSRn0ESKueHej51m5Bg9O1D1OulQwykQ==
   dependencies:
     "@babel/plugin-proposal-class-properties" "^7.0.0"
     "@babel/plugin-proposal-decorators" "^7.1.0"

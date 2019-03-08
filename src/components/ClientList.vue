@@ -1,7 +1,12 @@
 <template>
   <div>
-    <h3 class="title is-3"><font-awesome icon="broadcast-tower" :style="{ opacity: .5 }"/> Active Client List ({{clients.length}})</h3>
-    <p><span class="tag is-success">Fetched Live</span></p>
+    <h3 class="title is-3">
+      <font-awesome icon="broadcast-tower" :style="{ opacity: .5 }"/>
+      Active Client List ({{clients.length}})
+    </h3>
+    <p>
+      <span class="tag is-success">Fetched Live</span>
+    </p>
     <ul>
       <li v-for="client in clients" :key="client.id">{{ client.name }}</li>
     </ul>
@@ -9,10 +14,9 @@
 </template>
 
 <script>
-import axios from 'axios';
+import Harvest from '~/services/harvest';
 
-const token = '870202.pt.BnltfZlVKzZNfHWTlLnVpEZfadd1fZHRwl82odL6-OAoCHri3uGHgNt6ioKVIWlAkPi1cJGUnsGVLN9Su9an-g';
-const accountId = '563649';
+const harvest = new Harvest();
 
 export default {
   data() {
@@ -21,17 +25,7 @@ export default {
     };
   },
   mounted() {
-    axios
-      .get('https://api.harvestapp.com/v2/clients', {
-        headers: {
-          Authorization: `Bearer ${token}`,
-			    'Harvest-Account-Id': accountId,
-        },
-        params: {
-          is_active: true
-        }
-      })
-      .then(response => (this.clients = response.data.clients));
+    harvest.clients().then(response => (this.clients = response));
   }
 };
 </script>
