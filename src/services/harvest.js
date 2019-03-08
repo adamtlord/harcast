@@ -39,7 +39,7 @@ const toDateString = obj => {
 }
 
 const stringifyDates = options => {
-    const qs = {};
+    const qs = options;
 
     if (options.startDate) qs.start_date = toDateString(options.startDate);
 
@@ -51,7 +51,6 @@ const stringifyDates = options => {
 }
 class Harvest {
     constructor(instance) {
-        console.log(process.env);
         const headers = {
             "Authorization": `Bearer ${process.env.HARVEST_TOKEN}`,
             "Harvest-Account-ID": process.env.HARVEST_ACCOUNT_ID

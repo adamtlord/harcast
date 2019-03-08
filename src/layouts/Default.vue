@@ -1,7 +1,7 @@
 <template>
   <div class="layout">
-    <nav class="navbar is-success" role="navigation" aria-label="main navigation">
-      <div class="container is-fluid">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="container">
         <div class="navbar-brand">
           <g-link :to="{ name: 'home' }" class="navbar-item">Harcast</g-link>
         </div>

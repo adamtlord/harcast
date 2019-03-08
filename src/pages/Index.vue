@@ -1,7 +1,7 @@
 <template>
   <Layout>
-    <div class="container is-fluid">
-      <section class="hero is-light">
+    <div class="container">
+      <section class="hero">
         <div class="hero-body">
           <div class="container has-text-centered">
             <g-image alt="Example image" src="~/assets/donut.jpg" width="240"/>
