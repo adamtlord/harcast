@@ -6,11 +6,12 @@
           <div class="container has-text-centered">
             <g-image alt="Example image" src="~/assets/donut.jpg" width="240"/>
             <h1 class="title">Hello, world!</h1>
-            <h2 class="subtitle">This is a simple example of a
+            <h2 class="subtitle">
+              This is a simple example of a
               <a href="https://gridsome.org" target="_blank">Gridsome</a> site, deployed with
               <a href="https://zeit.co" target="_blank">Now</a>.
             </h2>
-            <g-link to="/about">About this project</g-link>
+            <g-link to="/about" class="button is-link">About this project</g-link>
           </div>
         </div>
       </section>
@@ -18,7 +19,10 @@
         <div class="content">
           <div class="columns">
             <div class="column">
-              <ProjectList />
+              <ProjectList/>
+            </div>
+            <div class="column">
+              <ClientList/>
             </div>
           </div>
         </div>
@@ -28,11 +32,13 @@
 </template>
 
 <script>
-import ProjectList from '~/components/ProjectList.vue'
+import ProjectList from "~/components/ProjectList.vue";
+import ClientList from "~/components/ClientList.vue";
 
 export default {
   components: {
-    ProjectList
+    ProjectList,
+    ClientList
   }
-}
+};
 </script>

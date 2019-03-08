@@ -52,39 +52,4 @@ module.exports = function (api) {
             })
         }
     })
-    api.loadSource(async store => {
-        const {
-            data
-        } = await axios({
-            method: 'get',
-            url: harvestBaseURL + harvestOptions.paths.clients,
-            headers: harvestOptions.headers,
-            params: {
-                is_active: true
-            }
-        })
-
-        const contentType = store.addContentType({
-            typeName: 'Clients'
-        })
-
-        for (const client of data.clients) {
-            const {
-                id,
-                name,
-                is_active,
-                address,
-                currency
-            } = client;
-            contentType.addNode({
-                id,
-                title: name,
-                fields: {
-                    is_active,
-                    address,
-                    currency
-                }
-            })
-        }
-    })
 }
