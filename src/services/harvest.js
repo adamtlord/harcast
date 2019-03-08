@@ -1,5 +1,6 @@
 import axios from 'axios';
 import moment from 'moment';
+import harvestCreds from '~/settings/harvest';
 
 const harvestSettings = {
     protocol: "https:",
@@ -20,7 +21,6 @@ const toDateString = obj => {
             );
         }
     } else if (obj instanceof Date) {
-        // Check for bad date objects like: new Date('LOL');
         if (isNaN(+obj)) {
             throw new Error('Invalid date object; expecting non NaN date value.');
         }
@@ -52,8 +52,8 @@ const stringifyDates = options => {
 class Harvest {
     constructor(instance) {
         const headers = {
-            "Authorization": `Bearer ${process.env.HARVEST_TOKEN}`,
-            "Harvest-Account-ID": process.env.HARVEST_ACCOUNT_ID
+            "Authorization": `Bearer ${harvestCreds.TOKEN}`,
+            "Harvest-Account-ID": harvestCreds.ACCOUNT_ID
         }
 
         this.instance =
@@ -85,8 +85,11 @@ class Harvest {
         methods.forEach(([name, dataLocation]) => {
             const route = '/' + name.toLowerCase();
             const prop = dataLocation || name;
-            this[name] = options =>
-                this._request(route, options).then(response => response.data[prop]);
+            this[name] = options => {
+                let data;
+                this._request(route, options).then(response => data = response.data[prop]);
+                return data;
+            }
         });
     }
 

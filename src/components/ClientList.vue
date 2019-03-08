@@ -17,9 +17,7 @@
 </template>
 
 <script>
-import Harvest from '~/services/harvest';
-
-const harvest = new Harvest();
+import HarvestClients from '~/services/harvestClients';
 
 export default {
   data() {
@@ -28,7 +26,7 @@ export default {
     };
   },
   mounted() {
-    harvest.clients({is_active: true}).then(response => (this.clients = response));
+    this.clients = HarvestClients();
   }
 };
 </script>
