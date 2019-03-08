@@ -6,10 +6,5 @@
       "src": "package.json",
       "use": "@now/static-build"
     }
-  ],
-  "env": {
-    "HARVEST_TOKEN": "@harvest-token",
-    "HARVEST_ACCOUNT_ID": "@harvest-account-id",
-    "ATL_TEST": "test"
-  }
+  ]
 }
