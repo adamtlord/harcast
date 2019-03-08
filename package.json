@@ -17,6 +17,9 @@
     "node-sass": "^4.11.0",
     "sass-loader": "^7.1.0"
   },
+  "devDependencies": {
+    "now-env": "^3.1.0"
+  },
   "resolutions": {
     "gridsome/jest-worker": "24.0.0"
   }

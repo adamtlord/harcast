@@ -1,5 +1,7 @@
 const axios = require('axios')
-
+if(process.env.ENV = 'dev'){
+    require('now-env')
+}
 const harvestOptions = {
     protocol: "https:",
     hostname: "api.harvestapp.com",
@@ -15,7 +17,7 @@ const harvestOptions = {
         "Harvest-Account-ID": process.env.HARVEST_ACCOUNT_ID
     }
 }
-console.log(process.env)
+
 const harvestBaseURL = `${harvestOptions.protocol}//${harvestOptions.hostname}/${harvestOptions.version}/`
 
 module.exports = function (api) {
