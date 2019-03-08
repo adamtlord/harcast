@@ -4,6 +4,7 @@
   "scripts": {
     "build": "gridsome build",
     "develop": "gridsome develop",
+    "start": "nodemon --exec babel-node api/index.js",
     "explore": "gridsome explore",
     "now-build": "yarn build"
   },
@@ -13,12 +14,18 @@
     "@fortawesome/vue-fontawesome": "^0.1.5",
     "axios": "^0.18.0",
     "bulma": "^0.7.4",
+    "express": "^4.16.4",
     "forecast-promise": "^1.2.1",
     "gridsome": "^0.5.4",
     "node-sass": "^4.11.0",
     "sass-loader": "^7.1.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.3.4",
+    "nodemon": "^1.18.10"
+  },
   "resolutions": {
     "gridsome/jest-worker": "24.0.0"
   }
