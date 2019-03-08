@@ -9,7 +9,6 @@
 </template>
 
 <script>
-import forecast from '~/services/forecast';
 import axios from 'axios';
 
 const token = '870202.pt.BnltfZlVKzZNfHWTlLnVpEZfadd1fZHRwl82odL6-OAoCHri3uGHgNt6ioKVIWlAkPi1cJGUnsGVLN9Su9an-g';
