@@ -18,10 +18,7 @@
         <div class="content">
           <div class="columns">
             <div class="column">
-              <h3 class="title is-3">Active Project List ({{ $page.projects.edges.length }})</h3>
-              <ul>
-                <li v-for="edge in $page.projects.edges" :key="edge.node.id">{{ edge.node.title }}</li>
-              </ul>
+              <ProjectList />
             </div>
           </div>
         </div>
@@ -30,19 +27,12 @@
   </Layout>
 </template>
 
-<page-query>
-  query Projects {
-    projects: allProjects {
-      edges {
-        node {
-          id
-          title
-        }
-      }
-    }
-  }
-</page-query>
-
 <script>
-export default {};
+import ProjectList from '~/components/ProjectList.vue'
+
+export default {
+  components: {
+    ProjectList
+  }
+}
 </script>
