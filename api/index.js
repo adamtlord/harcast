@@ -1,7 +1,5 @@
 import cors from 'cors';
 import express from 'express';
-import fs from 'fs';
-import https from 'https';
 import Harvest from '../src/services/harvest';
 import Forecast from '../src/services/forecast';
 
@@ -57,10 +55,6 @@ app.get('/forecast/people', (req, res) => {
         )
 });
 
-https.createServer({
-    key: fs.readFileSync('server.key'),
-    cert: fs.readFileSync('server.cert')
-}, app)
-.listen(3000, () =>
+app.listen(3000, () =>
     console.log('listening on port 3000')
 );
