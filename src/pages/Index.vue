@@ -19,10 +19,13 @@
         <div class="content">
           <div class="columns">
             <div class="column">
+              <ClientList/>
+            </div>
+            <div class="column">
               <ProjectList/>
             </div>
             <div class="column">
-              <ClientList/>
+              <PeopleList/>
             </div>
           </div>
         </div>
@@ -34,11 +37,13 @@
 <script>
 import ProjectList from "~/components/ProjectList.vue";
 import ClientList from "~/components/ClientList.vue";
+import PeopleList from "~/components/PeopleList.vue";
 
 export default {
   components: {
     ProjectList,
-    ClientList
+    ClientList,
+    PeopleList
   }
 };
 </script>

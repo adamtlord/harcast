@@ -1,26 +1,34 @@
 <template>
-    <div>
-        <h3 class="title is-3"><font-awesome icon="mountain" :style="{ opacity: .5 }"/> Active Project List ({{ $static.projects.edges.length }})</h3>
-        <p><span class="tag is-info">Pre-fetched</span></p>
-        <ul>
-            <li v-for="edge in $static.projects.edges" :key="edge.node.id">{{ edge.node.title }}</li>
-        </ul>
-    </div>
+  <div>
+    <h3 class="title is-3">Forecast Project List
+      <span v-if="projects.length">({{projects.length}})</span>
+    </h3>
+    <ul v-if="projects.length">
+      <li v-for="project in projects" :key="project.id">
+        {{ project.name }}
+        <span class="has-text-grey-light">({{project.id}})</span>
+        <span v-if="project.client" class="has-text-weight-semibold is-size-7"><br>{{ project.client.name }}</span>
+      </li>
+    </ul>
+    <p v-else>
+      <font-awesome icon="spinner" spin/>
+    </p>
+  </div>
 </template>
 
-<static-query>
-  query Projects {
-    projects: allProjects {
-      edges {
-        node {
-          id
-          title
-        }
-      }
-    }
-  }
-</static-query>
-
 <script>
-export default {};
+import axios from "axios";
+
+export default {
+  data() {
+    return {
+      projects: []
+    };
+  },
+  mounted() {
+    axios.get("//localhost:3000/forecast/projects").then(projects => {
+      this.projects = projects.data;
+    });
+  }
+};
 </script>
