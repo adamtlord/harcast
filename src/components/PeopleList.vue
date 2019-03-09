@@ -22,7 +22,7 @@ export default {
     };
   },
   mounted() {
-    axios.get('https://localhost:3000/forecast/people')
+    axios.get('//localhost:3000/forecast/people')
     .then(people => {
       this.people = people.data.filter(person => !person.archived)
     }
