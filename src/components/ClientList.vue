@@ -22,7 +22,7 @@ export default {
     };
   },
   mounted() {
-    axios.get('/api/harvest/clients', {
+    axios.get('//localhost:3000/harvest/clients', {
       params: {
         is_active: true
       }

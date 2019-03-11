@@ -26,7 +26,7 @@ export default {
     };
   },
   mounted() {
-    axios.get('/api/forecast/projects').then(projects => {
+    axios.get('//localhost:3000/forecast/projects').then(projects => {
       this.projects = projects.data;
     });
   }
